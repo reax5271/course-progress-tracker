@@ -9,7 +9,7 @@ def create_subjects(apps, schema_editor):
     Subject.objects.create(name='Computing', color='#007bff')
     Subject.objects.create(name='Math', color='#28a745')
     Subject.objects.create(name='Biology', color='#17a2b8')
-    Subject.objects.create(name='History', color='#ffc107')
+    Subject.objects.create(name='Hiistory', color='#ffc107')
 
 
 class Migration(migrations.Migration):

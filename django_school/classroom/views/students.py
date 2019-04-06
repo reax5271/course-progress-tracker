@@ -103,9 +103,9 @@ def take_quiz(request, pk):
                     score = round((correct_answers / total_questions) * 100.0, 2)
                     TakenQuiz.objects.create(student=student, quiz=quiz, score=score)
                     if score < 50.0:
-                        messages.warning(request, '' % (quiz.name, score))
+                        messages.warning(request, 'Error')
                     else:
-                        messages.success(request, '' % (quiz.name, score))
+                        messages.success(request, 'Congratulations!')
                     return redirect('students:quiz_list')
     else:
         form = TakeQuizForm(question=question)

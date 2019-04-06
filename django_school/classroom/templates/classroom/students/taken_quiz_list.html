@@ -8,7 +8,6 @@
         <tr>
           <th>Topic</th>
           <th>Subject</th>
-          <th>Score</th>
         </tr>
       </thead>
       <tbody>
@@ -16,7 +15,6 @@
           <tr>
             <td>{{ taken_quiz.quiz.name }}</td>
             <td>{{ taken_quiz.quiz.subject.get_html_badge }}</td>
-            <td>{{ taken_quiz.score }}</td>
           </tr>
         {% empty %}
           <tr>

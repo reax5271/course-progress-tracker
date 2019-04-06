@@ -91,7 +91,7 @@ class QuizDeleteView(DeleteView):
 
     def delete(self, request, *args, **kwargs):
         quiz = self.get_object()
-        messages.success(request, '' % quiz.name)
+        messages.success(request, 'The quiz %s was deleted with success!' % quiz.name)
         return super().delete(request, *args, **kwargs)
 
     def get_queryset(self):
@@ -136,7 +136,7 @@ def question_add(request, pk):
             question = form.save(commit=False)
             question.quiz = quiz
             question.save()
-            messages.success(request, '')
+            messages.success(request, 'You may now add answers/options to the question.')
             return redirect('teachers:question_change', quiz.pk, question.pk)
     else:
         form = QuestionForm()
@@ -174,7 +174,7 @@ def question_change(request, quiz_pk, question_pk):
             with transaction.atomic():
                 form.save()
                 formset.save()
-            messages.success(request, '')
+            messages.success(request, 'Saved!')
             return redirect('teachers:quiz_change', quiz.pk)
     else:
         form = QuestionForm(instance=question)
@@ -202,7 +202,7 @@ class QuestionDeleteView(DeleteView):
 
     def delete(self, request, *args, **kwargs):
         question = self.get_object()
-        messages.success(request, '' % question.text)
+        messages.success(request, 'The question %s was deleted with success!' % question.text)
         return super().delete(request, *args, **kwargs)
 
     def get_queryset(self):

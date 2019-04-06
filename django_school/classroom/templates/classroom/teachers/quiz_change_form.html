@@ -28,9 +28,7 @@
         <div class="col-10">
           <strong>Subtopics</strong>
         </div>
-        <div class="col-2">
-          <strong>Answers</strong>
-        </div>
+
       </div>
     </div>
     <div class="list-group list-group-flush list-group-formset">
@@ -40,9 +38,7 @@
             <div class="col-10">
               <a href="{% url 'teachers:question_change' quiz.pk question.pk %}">{{ question.text }}</a>
             </div>
-            <div class="col-2">
-              {{ question.answers_count }}
-            </div>
+            
           </div>
         </div>
       {% empty %}
